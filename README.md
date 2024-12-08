@@ -39,7 +39,7 @@ python data_preprocessing.py
 ### Model Training
 Run the training pipeline:
 ```bash
-python model_all.py
+python train.py
 ```
 
 ## Related Models
