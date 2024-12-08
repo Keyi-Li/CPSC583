@@ -1,5 +1,4 @@
 FROM mambaorg/micromamba:focal-cuda-11.7.0 AS conda_torch
-MAINTAINER Francesco Strino "francesco.strino@pcmgf.com"
 
 # The version above should match the version in nvidia-smi.
 # On abel the drivers currently support version 11.7 must be used for the torch installation.
