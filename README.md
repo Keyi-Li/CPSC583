@@ -30,16 +30,22 @@ docker run --gpus all \
 
 ## Usage Instructions
 
+## CODEX dataset
+Please note that the CODEX dataset used in this project is not publicly available due to data privacy restrictions.
 ### Data Preprocessing
 Execute the preprocessing script:
 ```bash
 python data_preprocessing.py
 ```
-
 ### Model Training
 Run the training pipeline:
 ```bash
 python Train_Trial.py
+```
+
+## MNIST-related Dataset (only for demonstration purpose)
+```bash
+python Demo.py
 ```
 
 ## Related Models
@@ -51,4 +57,4 @@ python Train_Trial.py
 - Implementation reference: [DANN GitHub Repository](https://github.com/fungtion/DANN)
 
 ## Data Availability
-Please note that the CODEX dataset used in this project is not publicly available due to data privacy restrictions.
+
