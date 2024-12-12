@@ -56,5 +56,4 @@ python Demo.py
 ### DANN
 - Implementation reference: [DANN GitHub Repository](https://github.com/fungtion/DANN)
 
-## Data Availability
 
