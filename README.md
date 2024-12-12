@@ -5,24 +5,24 @@ This repository contains the implementation of ILS-GNN (Interpretable Locally Sp
 
 ## Environment Setup
 
-Most relavent packages can be found in env/environment yml
+Most relavent packages can be found in `env/environment.yml`
 
 ## Usage Instructions
 
-## CODEX dataset
+### CODEX dataset
 
-### Data Preprocessing
+#### Data Preprocessing
 Execute the preprocessing script:
 ```bash
 python data_preprocessing.py
 ```
-### Model Training
+#### Model Training
 Run the training pipeline:
 ```bash
 python Train_Trial.py
 ```
 
-## MNIST-related Dataset (only for demonstration purpose)
+#### MNIST-related Dataset (only for demonstration purpose)
 ```bash
 python Demo.py
 ```
@@ -35,4 +35,5 @@ python Demo.py
 ### DANN
 - Implementation reference: [DANN GitHub Repository](https://github.com/fungtion/DANN)
 
-
+### LSPIN
+- Implementation reference: [LSPIN GitHub Repository](https://github.com/jcyang34/lspin)
