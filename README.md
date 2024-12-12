@@ -11,18 +11,17 @@ Most relavent packages can be found in `env/environment.yml`
 
 ### CODEX dataset
 
-#### Data Preprocessing
-Execute the preprocessing script:
+- Data Preprocessing: Execute the preprocessing script:
 ```bash
 python data_preprocessing.py
 ```
-#### Model Training
-Run the training pipeline:
+
+- Model Training: Run the training pipeline:
 ```bash
 python Train_Trial.py
 ```
 
-#### MNIST-related Dataset (only for demonstration purpose)
+### MNIST-related Dataset (only for demonstration purpose)
 ```bash
 python Demo.py
 ```
