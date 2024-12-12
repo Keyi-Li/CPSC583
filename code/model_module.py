@@ -194,10 +194,10 @@ class Model(nn.Module):
         for linear_block in self.MLP:
             x = linear_block(x)
             
-        label_pred = self.predictor_label(x)
+        label_pheno = self.predictor_pheno(x)
 	x = ReverseLayerF.apply(x)
-	label_pheno = self.predictor_pheno(x)
-
+	label_pred = self.predictor_label(x)
+	
         return label_pred, label_pheno, y,  regularization, stability_regularization
 
 
