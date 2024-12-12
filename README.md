@@ -21,7 +21,7 @@ python data_preprocessing.py
 python Train_Trial.py
 ```
 
-### MNIST-related Dataset (only for demonstration purpose)
+### MNIST-related Dataset (only for demonstration purpose, not part of the project)
 ```bash
 python MNIST_Demo.py
 ```
