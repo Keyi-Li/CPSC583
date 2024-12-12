@@ -23,7 +23,7 @@ python Train_Trial.py
 
 ### MNIST-related Dataset (only for demonstration purpose)
 ```bash
-python Demo.py
+python MNIST_Demo.py
 ```
 
 ## Related Models
