@@ -85,14 +85,14 @@ class GCNBlock(torch.nn.Module):
     def __init__(self, in_channels, out_channels, dropout_rate=0.2):
         super().__init__()
         self.conv = GCNConv(in_channels, out_channels)
-        #self.norm = LayerNorm(out_channels)
+        self.norm = LayerNorm(out_channels)
         self.dropout = dropout_rate
         self.lin = torch.nn.Linear(out_channels, out_channels)
 
     def forward(self, x, edge_index, edge_weight=None):
         x = self.conv(x, edge_index, edge_weight)
         x = F.relu(x)
-        #x = self.norm(x)
+        x = self.norm(x)
         x = F.dropout(x, p=self.dropout, training=self.training)
         x = self.lin(x)
         return x
