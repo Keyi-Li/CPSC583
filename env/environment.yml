@@ -16,6 +16,7 @@ dependencies:
   - h5py
   - anndata
   - scanpy
+  - jax-cuda>=0.4.23
   - mkl=2024.0.0
   - pytorch=2.0.1
   - cuda-version=11.7
