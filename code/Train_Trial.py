@@ -5,7 +5,7 @@
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "6"  # check before use
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"  
 os.environ["OPENBLAS_NUM_THREADS"] = "4" # use this to avoid sklearn crashing the kernel
 
 import sys
