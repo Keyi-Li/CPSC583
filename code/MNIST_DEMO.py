@@ -3,8 +3,6 @@
 
 # ## 0. Packages and Functions
 
-
-
 import os
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
@@ -18,8 +16,6 @@ import numpy as np
 import random
 import scanpy as sc
 
-
-
 os.chdir("..")
 print(os.getcwd())
 
@@ -28,7 +24,6 @@ print(os.getcwd())
 ## vim /usr/local/lib/python3.8/dist-packages/scanpy/plotting/_tools/scatterplots.py 
 ## add import matplotlib.pyplot as plt
 ## replace line 160 something: cmap = copy(colormaps.get_cmap(cmap)) with  cmap = copy(plt.cm.get_cmap(cmap))
-
 
 np.random.seed(0)
 random.seed(0)
@@ -78,13 +73,9 @@ def visual_inspect(dataset,name):
 # ## 1.Preprocessing Dataset
 # - process each dataset to have mean 0 and std 1
 
-
-
 dataset_dir = "./dataset/mnist_c"
 train_name = ['impulse_noise','canny_edges','zigzag','dotted_line','scale']
 test_name = ["fog", "stripe"]
-
-
 
 data_dict = {}
 current_id = 0
@@ -148,7 +139,6 @@ for name, dataset in test_dict.items():
 # ## 2. UMAP Visualization
 # - randomly select 1000 samples from each dataset and plot as umap
 
-
 import random
 random.seed(42) 
 domain_list = []
@@ -184,8 +174,6 @@ sc.tl.pca(adata)
 sc.pp.neighbors(adata)
 sc.tl.umap(adata)
 
-
-
 # very obvious batch effect/distribution shift
 with plt.rc_context({"figure.figsize": (8,6)}):
     sc.pl.umap(
@@ -197,7 +185,6 @@ with plt.rc_context({"figure.figsize": (8,6)}):
 
 
 # ## 3. Turn Data into Graph Data
-
 
 import torch
 from torch_geometric.data import Data
@@ -243,8 +230,6 @@ test_data_list = mnist_to_grid_graph(test_dict)
 # ## 4. Model
 # - the model structure here is fundamentally the same as used in the paper
 # - modification is only made to accomodate MNIST data property
-
-
 
 import torch
 import torch_geometric
@@ -435,7 +420,6 @@ class Model(nn.Module):
 
 
 from torch_geometric.loader import DataLoader
-
 
 def accu(model, data):
     acc = 0
