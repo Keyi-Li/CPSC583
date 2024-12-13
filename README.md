@@ -22,6 +22,7 @@ python Train_Trial.py
 ```
 
 ### MNIST-related Dataset (only for demonstration purpose, not part of the project)
+- Dataset can be created based on [MNIST-C](https://arxiv.org/abs/1906.02337)
 ```bash
 python MNIST_Demo.py
 ```
