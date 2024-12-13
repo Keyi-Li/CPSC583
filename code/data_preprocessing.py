@@ -5,7 +5,7 @@
 
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"  # check before use
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"  
 
 import numpy as np
 import pandas as pd
