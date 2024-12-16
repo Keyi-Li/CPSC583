@@ -306,7 +306,7 @@ for (train_idx, test_idx), test_sample_name in zip(fold_splits, combinations[:5]
             err_t_domain= loss_domain(sample_out, data_target.id)
             t_domain_loss += err_t_domain.item()
     
-            total_loss = err_s_main + err_s_domain + err_t_domain + regularization, stab_regularization
+            total_loss = err_s_main + err_s_domain + err_t_domain + regularization + stab_regularization
             
             total_loss.backward()
             optimizer.step()
