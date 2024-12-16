@@ -246,6 +246,7 @@ for (train_idx, test_idx), test_sample_name in zip(fold_splits, combinations[:5]
     optimizer = torch.optim.Adam(my_net.parameters(), lr=lr)
     loss_main = torch.nn.NLLLoss()
     loss_domain = torch.nn.NLLLoss()
+    log_softmax = torch.nn.LogSoftmax(dim=1)
     cuda = True
     
     if cuda:
@@ -294,8 +295,8 @@ for (train_idx, test_idx), test_sample_name in zip(fold_splits, combinations[:5]
             optimizer.zero_grad()
                 data = data.to(device)
             class_out, sample_out, regularization, stab_regularization = my_net(data=data_source, alpha=alpha)
-            err_s_main = loss_main(class_out, data_source.y)
-            err_s_domain = loss_domain(sample_out, data_source.id)
+            err_s_main = loss_main(log_softmax(class_out), data_source.y)
+            err_s_domain = loss_domain(log_softmax(sample_out), data_source.id)
             s_main_loss += err_s_main.item()
             s_domain_loss += err_s_domain.item()
     
@@ -303,7 +304,7 @@ for (train_idx, test_idx), test_sample_name in zip(fold_splits, combinations[:5]
             data_target = next(data_target_iter)
     
             _, sample_out = my_net(data=data_target, alpha=alpha)
-            err_t_domain= loss_domain(sample_out, data_target.id)
+            err_t_domain= loss_domain(log_softmax(sample_out), data_target.id)
             t_domain_loss += err_t_domain.item()
     
             total_loss = err_s_main + err_s_domain + err_t_domain + regularization + stab_regularization
