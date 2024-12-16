@@ -198,7 +198,7 @@ class Model(nn.Module):
 	x = ReverseLayerF.apply(x)
 	label_pred = self.predictor_label(x)
 	
-        return label_pred, label_pheno, y,  regularization, stability_regularization
+        return label_pred, label_pheno, regularization, stability_regularization
 
 
 
