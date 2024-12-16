@@ -303,7 +303,7 @@ for (train_idx, test_idx), test_sample_name in zip(fold_splits, combinations[:5]
             # training model using target data (for DANN)
             data_target = next(data_target_iter)
     
-            _, sample_out = my_net(data=data_target, alpha=alpha)
+            _, sample_out, regularization, stab_regularization = my_net(data=data_target, alpha=alpha)
             err_t_domain= loss_domain(log_softmax(sample_out), data_target.id)
             t_domain_loss += err_t_domain.item()
     
